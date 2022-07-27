@@ -1,0 +1,17 @@
+package com.demoConsola.repository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.demoConsola.DemoConsola2Application;
+
+public class PersonaRepoImpl2 implements IPersonaRepo{
+
+	private static Logger logger = LoggerFactory.getLogger(DemoConsola2Application.class);
+	
+	@Override
+	public void presentar(String nombre, int edad) {
+		logger.info("Este nefasto ser: " + nombre + ", de " + edad + " años");
+	}
+
+}

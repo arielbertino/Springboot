@@ -1,0 +1,15 @@
+package com.demoConsola.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonaServiceImpl implements IPersonaService{
+	
+	@Autowired
+	private IPersonaRepo repo
+	
+	@Override
+	public void presentar(String nombre, int edad) {
+			
+	}
+}

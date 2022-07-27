@@ -1,0 +1,5 @@
+package com.demoConsola.repository;
+
+public class PersonaRepoImpl {
+
+}

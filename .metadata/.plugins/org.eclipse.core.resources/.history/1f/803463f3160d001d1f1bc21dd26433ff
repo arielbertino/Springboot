@@ -1,0 +1,10 @@
+package com.demoConsola.repository;
+
+public class PersonaRepoImpl2 implements IPersona{
+
+	@Override
+	public void presentar(String nombre, int edad) {
+		logger.info("Les presentamos a este nefasto ser: " + nombre + "de " + edad + " años");
+	}
+
+}

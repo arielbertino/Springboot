@@ -1,0 +1,13 @@
+package com.demaConsola;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoConsola2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoConsola2Application.class, args);
+	}
+
+}

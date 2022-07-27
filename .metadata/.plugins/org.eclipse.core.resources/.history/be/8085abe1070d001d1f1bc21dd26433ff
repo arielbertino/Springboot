@@ -1,0 +1,14 @@
+package com.demoConsola.service;
+
+import com.demoConsola.repository.IPersonaRepo;
+
+public class PersonaServiceImpl implements IPersonaService{
+	
+	private IPersonaRepo repositorio;
+	
+	@Override
+	public void registrar(String nombre) {
+		
+		
+	}
+}
