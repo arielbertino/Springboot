@@ -1,5 +1,34 @@
 package com.demoWeb2.controller;
 
-public class DemoController {
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
+public class DemoController {
+	
+	// Se puede acceder al siguiente metodo solamente atraves de la operacion tipo "get"
+	// Las peticiones pueden ser get, post, put, delete entre otras
+	// Dentro de @RequestParam 
+	// name="name" valor que se le pasa al @RequestParam para mostrar
+	// required=false indica que el parametro name podria faltar
+	// defaultValue="World" indica que valor mostrar si el parametro name faltase
+	// Luego @RequestParam(...) es capturado en el parametro String name propio del metodo
+	// Model model es propio de Spring MVC es donde voy a poder agregar las 
+	// variables que necesito para mostralas ne una futura vista.
+	// Esta buscando y retornando la pagina que se llama "greeting" podria ser 
+	// otra pagina web distinta y nada tien qe ver con el @GetMapping("/greeting").
+	// las paginas que quiera utilizar definidas como html deben estar en la carpeta src/main/resources/templates
+	// si en el navegador ingresara asi: localhost:8080/greeting?name=Ariel")
+	// me toma "Ariel" como valor de la variable name
+	
+	@GetMapping("/greeting")
+	public String greeting(@RequestParam(name="name", required=false, defaultValue="Ariel") String name, Model model) {
+		// variables que llegara a usar en la logica qur podria estar aca
+		// las podria mostrar o trabajarlas eventualemte en el html agragandolas 
+		// como se hizo con la variable name
+		model.addAttribute("name", name);
+		return "greeting";
+	}
 }
