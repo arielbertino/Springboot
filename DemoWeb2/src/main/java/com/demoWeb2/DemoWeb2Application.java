@@ -1,15 +1,15 @@
 package com.demoWeb2;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.demoWeb2.controller.DemoController;
-import com.demoWeb2.repo.IPersonaRepo;
+import com.demoWeb2.rest.RestDemoController;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = DemoController.class)
+@ComponentScan(basePackageClasses = RestDemoController.class)
 public class DemoWeb2Application {
 	
 	public static void main(String[] args) {

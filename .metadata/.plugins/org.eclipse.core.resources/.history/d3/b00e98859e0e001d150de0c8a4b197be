@@ -1,0 +1,17 @@
+server.port=9898
+# Motor de busqueda de base de datos
+spring.jpa.database=POSTGRESQL
+# Mostrar o no cuando realiza consultas a la base
+spring.jpa.show-sql=false
+# Estrategia de generacio del esquema hacia la base de datos
+spring.jpa.hibernate.ddl-auto=update
+# Basado en el motor que uno agrego en las dependencias el pom.xml
+spring.datasource.dbcp2.driver-class-name=org.postgresql.Driver
+# vinculo de conexion  a la base en ordenador
+spring.datasource.url=jdbc:postgresql://localhost/demo
+# Usuario y clave de acceso a la base para poder ser operada
+# spring.datasource.username=localhost
+spring.datasource.username=postgres
+spring.datasource.password=123
+# Linea obligatoria apartir de SpringBoot 2, especificamente para postglesql
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true

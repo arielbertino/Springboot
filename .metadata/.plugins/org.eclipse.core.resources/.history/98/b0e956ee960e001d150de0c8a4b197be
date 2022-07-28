@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- xmlns:th referencia al espacio de nombres que le indicamos despues ne este caso thymeleaf-->
+<!-- para poder usarlo luego -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="Content Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<!-- usamos el espacio de nombre th -->
+	<!-- ${nombreVariable} es una expression language (EL) -->
+	<!-- Esta variable es tomada desde el controladro que querramos -->
+	<!-- en este caso desde la clase DemoController mediante el siguiente pasaje-->
+	<!-- model.addAttribute("name", name) -->
+	<!-- Tanto en la vista(html), como en el controlador el nombre de la variable tiene que ser el mismo -->
+	<p th:text="'Hello, ' + ${name} + '!'" />
+	
+	<!-- Insertamos una tabla html para porder mostrar los elementos de la tabla de la base de datos -->
+	
+	<title>Acá esta tu tablita</title>
+	<table>
+		<th:block th:each="per : ${persona}">
+			<tr>
+				<td th:text="${per.idPersona}"></td>
+				<td th:text="${per.nombre}"></td>
+			</tr>
+		</th:block>		
+	</table>
+</body>
+</html>

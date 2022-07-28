@@ -39,13 +39,28 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>		
+		</dependency>	
+			
 		<!-- Dependencia para manejar sql con postgre -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- Dependencia para manejar incorporar Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<!-- inclusion de dependencia devtools que permite autocompilacion al guardar proyecto-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -1,0 +1,24 @@
+package com.demoConsola;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+
+
+@SpringBootTest
+class DemoWeb2ApplicationTests {
+	// En esta clase test, se crea un test unitario simple 
+	//para poner en practica conceptos de suguridad basica
+	
+	// Inyecto la dependencia del reop para poder traer 
+	// operaciones de insercion
+	@Autowired
+	private IUsuarioRepo repo;
+	
+	@Test
+	public void crearUsuariotest() {
+		
+	}
+
+}
