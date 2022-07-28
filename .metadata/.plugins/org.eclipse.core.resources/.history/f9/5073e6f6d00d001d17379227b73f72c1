@@ -1,0 +1,14 @@
+package com.demoWeb2.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.demoWeb2.model.Persona;
+
+// se parametriza JpaRepository<T,ID>
+// T en este caso la clase de la cual queremos gener la tabla en la base que es Persona
+// ID el tipo de la clave primaria que definimos en la clase
+
+public interface IPersonaRepo extends JpaRepository<com.demoWeb2.model.Persona, Integer>{
+	
+	
+}

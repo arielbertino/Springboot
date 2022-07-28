@@ -1,0 +1,8 @@
+spring.jpa.database=POSTGRESQL
+spring.jpa.show-sql=false
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.dbcp2.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://localhost/cineapp
+spring.datasource.username=postgres
+spring.datasource.password=123
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true

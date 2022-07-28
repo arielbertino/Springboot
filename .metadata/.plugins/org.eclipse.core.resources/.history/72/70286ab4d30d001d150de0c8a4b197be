@@ -1,0 +1,5 @@
+package com.demoWeb2.repo;
+
+public interface PersonaRepo {
+
+}

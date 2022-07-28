@@ -1,9 +1,13 @@
 package com.demoWeb2.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.demoWeb2.model.Persona;
+import com.demoWeb2.repo.IPersonaRepo;
 
 @Controller
 public class DemoController {
@@ -23,11 +27,21 @@ public class DemoController {
 	// si en el navegador ingresara asi: localhost:8080/greeting?name=Ariel")
 	// me toma "Ariel" como valor de la variable name
 	
+	@Autowired
+	private IPersonaRepo repo;
+	
+	
 	@GetMapping("/greeting")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="Ariel") String name, Model model) {
 		// variables que llegara a usar en la logica qur podria estar aca
 		// las podria mostrar o trabajarlas eventualemte en el html agragandolas 
 		// como se hizo con la variable name
+		
+		Persona p1 = new Persona();
+		p1.setIdPersona(1);
+		p1.setNombre("Ariel");
+		repo.save(p1);
+		
 		model.addAttribute("name", name);
 		return "greeting";
 	}
