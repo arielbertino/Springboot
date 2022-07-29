@@ -9,6 +9,7 @@ public class Usuario {
 	
 	@Id
 	private int id;
+	
 	private String nombre;
 	private String clave;
 	

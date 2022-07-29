@@ -1,0 +1,20 @@
+package com.demoWeb2.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.demoWeb2.model.Usuario;
+import com.demoWeb2.repo.IUsuarioRepo;
+
+public class UserService implements UserDetailsServicer{
+
+	@Autowired
+	private IUsuarioRepo repo;
+	
+	@Override
+	public UserDetails loadUserByName(String username) throws UsernameNotFoundException{
+		Usuario us = repo.findByNombre(username);
+	}
+}

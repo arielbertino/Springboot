@@ -1,0 +1,41 @@
+package com.demoWeb2;
+
+
+
+import com.demoWeb2.service.UserService;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter{
+    // Clase que sirve para cifrar las contraseñas
+    // Tambien proviene de SpringBoot security
+    
+	@Autowired
+	private UserService userDetailsServ;
+	
+	@Autowired
+	private BCryptPasswordEncoder codificador;
+	
+    @Bean
+    BCryptPasswordEncoder passwordEncoder() {
+    	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    	return encoder;
+    }
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(userDetailsServ)
+			.passwordEncoder(codificador);
+	}
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
+		    .anyRequest()
+		    .authenticated()
+		    .and()
+		    .httpBasic();
+	}
+    
+    
+}

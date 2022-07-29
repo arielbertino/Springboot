@@ -1,0 +1,5 @@
+package com.demoWeb2;
+
+public class SecurityConfig {
+
+}

@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.demoWeb2.model.Usuario;
 import com.demoWeb2.repo.IUsuarioRepo;
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,14 +23,17 @@ class DemoWeb2ApplicationTests {
 	@Autowired
 	private IUsuarioRepo repo;
 	
+	//Inyacto en encoder que al ser bean solo hay una instacia
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
 	@Test
 	public void crearUsuarioTest() {
-		Usuario user = new Usuario();
-		user.setId(1);
-		user.setNombre("RoloR");
-		user.setClave("1234");
-		Usuario usuarioRetorno = repo.save(user);
-		assertTrue(usuarioRetorno.getClave().equalsIgnoreCase(user.getClave()));
+		Usuario us = new Usuario();
+		us.setId(4);
+		us.setNombre("montoto");
+		us.setClave(encoder.encode("oto"));
+		Usuario retorno = repo.save(us);
+		assertTrue(retorno.getClave().equalsIgnoreCase(us.getClave()));
 	}
-
 }
